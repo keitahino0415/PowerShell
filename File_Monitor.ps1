@@ -13,8 +13,7 @@ Function File_Monitor(
   $DATA_ARRAY = @{}
 
   $buf = (Select-String -pattern  "target" –path $TARGET_CONF_PATH | foreach{$_.ToString().split(":")[3]})
-Write-host($buf
-)
+Write-host($buf)
   For($i=0;$i -lt $buf.COUNT;$i++){
     $DATA_ARRAY[$i] = $TARGET_PATH + $buf[$i]
   }
